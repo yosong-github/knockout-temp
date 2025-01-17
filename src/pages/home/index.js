@@ -13,26 +13,24 @@ const temp = `
     </div>
   `
 
-
 export default function Home() {
   Promise.resolve(1)
-  document.querySelector('#app').innerHTML = temp;
+  document.querySelector('#app').innerHTML = temp
 
   // 视图模型
-  var vm = {
+  const vm = {
     product: {
       id: 1,
       name: ko.observable('yosong'),
       price: 10,
       stock: 20
     }
-  };
-
+  }
 
   setTimeout(() => {
     vm.product.name('yosong2')
-  }, 2000);
+  }, 2000)
 
   // 激活 Knockout
-  ko.applyBindings(vm, document.getElementById('home'));
+  ko.applyBindings(vm, document.getElementById('home'))
 }
