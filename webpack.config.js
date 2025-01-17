@@ -70,6 +70,12 @@ module.exports = (env, argv) => {
       host: '0.0.0.0',
       port: 8080,
       hot: true
+    },
+
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src/')
+      }
     }
   }
 

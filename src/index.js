@@ -1,9 +1,5 @@
-import Home from './pages/home'
-import About from './pages/about'
+import 'normalize.css'
 
-About()
-const Setup = () => {
-  Home()
-}
+import '@/styles/common.less'
 
-Setup()
+// import Home from '@/pages/home'

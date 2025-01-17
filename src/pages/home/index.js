@@ -15,6 +15,7 @@ const temp = `
 
 export default function Home() {
   Promise.resolve(1)
+
   document.querySelector('#app').innerHTML = temp
 
   // 视图模型

@@ -16,7 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "@babel/runtime-corejs3": "^7.26.0",
-    "knockout": "^3.5.1"
+    "knockout": "^3.5.1",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
