@@ -2,6 +2,7 @@ import ko from 'knockout'
 
 const temp = `
     <div id="home">
+      <h1>Home</h1>
       <strong>ID:</strong>
       <span data-bind="text:product.id"></span><br/>
       <strong>Name:</strong>
@@ -16,7 +17,9 @@ const temp = `
 export default function Home() {
   Promise.resolve(1)
 
-  document.querySelector('#app').innerHTML = temp
+  ko.components.register('home', {
+    template: temp
+  })
 
   // 视图模型
   const vm = {

@@ -62,7 +62,8 @@ module.exports = (env, argv) => {
               ]
             }
           }
-        }
+        },
+        { test: /\.txt$/, use: 'raw-loader' }
       ]
     },
 

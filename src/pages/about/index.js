@@ -29,5 +29,5 @@ export default function About() {
   }, 2000)
 
   // 激活 Knockout
-  ko.applyBindings(vm, document.getElementById('app'))
+  ko.applyBindings(vm, document.getElementById('about'))
 }
