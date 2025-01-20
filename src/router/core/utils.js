@@ -7,8 +7,6 @@ export function hashChangEvent() {
   // 如果找不到符合条件的元素，那么route值为空
   let route = this.routes.find(item => item.path === hash)
   if (route) {
-    console.log(document.querySelector('router-views'))
-
-    // route.component(hash)
+    route.component(document.querySelector('#router'))
   }
 }

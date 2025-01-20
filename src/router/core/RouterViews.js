@@ -1,17 +1,14 @@
 import ko from 'knockout'
-import template from '!!raw-loader!./template.html'
-// require('!!raw-loader!./template.html').default
 
-const registerTemp = () => {
-  console.log(template)
+const Router = (node = document.querySelector('#main')) => {
+  node.innerHTML = require('!!raw-loader!./router.html').default.replace('<!DOCTYPE html>', '')
 
-  ko.components.register('router-views', {
-    template: {
-      element: 'router-views-temp'
-    }
-  })
-
-  ko.applyBindings()
+  ko.applyBindings(
+    {
+      name: ko.observable('yosong')
+    },
+    document.querySelector('#router')
+  )
 }
 
-export default registerTemp
+export default Router

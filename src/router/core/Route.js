@@ -6,9 +6,7 @@ import { hashChangEvent } from './utils'
  * @param {{path: string, component: Function, meta: object}[]} routes - 路由数组
  * @param {HTMLElement} dom - 路由挂载节点
  */
-function Route(routes, dom) {
-  this.dom = dom
-  this.dom.innerHTML = '<router-views></router-views>'
+function Route(routes) {
   this.routes = routes
   this.init()
 }

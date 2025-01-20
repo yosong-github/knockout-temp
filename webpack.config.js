@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = (env, argv) => {
   const isDevelopment = argv.mode === 'development'
@@ -18,10 +17,10 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         title: '自定义标题',
         template: path.resolve(__dirname, 'public/index.html')
-      }),
-      new ESLintPlugin({
-        context: path.resolve(__dirname, 'src') // 指定检查的文件目录
       })
+      // new ESLintPlugin({
+      //   context: path.resolve(__dirname, 'src') // 指定检查的文件目录
+      // })
     ],
 
     module: {
@@ -32,12 +31,31 @@ module.exports = (env, argv) => {
             // compiles Less to CSS
             'style-loader',
             'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: ['postcss-preset-env']
+                }
+              }
+            },
             'less-loader'
           ]
         },
         {
           test: /\.css$/i,
-          use: ['style-loader', 'css-loader']
+          use: [
+            'style-loader',
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: ['postcss-preset-env']
+                }
+              }
+            }
+          ]
         },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
