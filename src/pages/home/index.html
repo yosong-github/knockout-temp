@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <div id="home">
   <span data-bind="text: home"></span>
+  <br>
+  <span data-bind="text: home().length"></span>
+  <br>
+  <input type="text" data-bind="value: inputVal">
   <button data-bind="click: changeHome">修改</button>
 </div>

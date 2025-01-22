@@ -3,7 +3,6 @@ import './layout.less'
 
 const Layout = (node = document.querySelector('body')) => {
   node.innerHTML = require('!!raw-loader!./layout.html').default.replace('<!DOCTYPE html>', '')
-  console.log(111)
 
   ko.applyBindings(
     {
